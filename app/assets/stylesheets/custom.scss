@@ -1,0 +1,27 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+/* universal */
+*{
+  margin: 0;
+  padding: 0;
+}
+
+a{text-decoration: none;}
+
+ul{list-style-type: none;}
+
+img{max-width: 100%}
+
+h1{
+	font-size: 48px;
+	line-height: 1;
+}
+h2{
+	font-size: 36px;
+	line-height: 1.3333;
+}
+h3{
+	font-size: 24px;
+	line-height: 1;
+}
