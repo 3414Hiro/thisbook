@@ -1,2 +1,17 @@
-<h1>Welcome#home</h1>
-<p>Find me in app/views/welcome/home.html.erb</p>
+<div class="wrapper">
+  <div id="top">
+    <h1 id="top-title">人生を<span id="strong">変</span>える一冊</h1>
+    <div class="top-copy">
+      <p>本には”力”がある</p>
+      <p>人の人生を変える力が</p>
+      <p>そんな本に出会いにいきませんか？</p>
+    </div>
+    <div class="top-btn">
+      <%= link_to "ログイン", new_user_session_path, class: "btn" %>
+      <%= link_to "新規登録", new_user_registration_path, class: "btn" %>
+    </div>
+  </div>
+  <div id="concept">
+    <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+  </div>
+</div>

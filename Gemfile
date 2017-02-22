@@ -27,6 +27,8 @@ gem 'bootstrap-sass'
 
 gem 'devise'
 
+gem 'amazon-ecs'
+
 gem 'pry-byebug', group: :development
 
 # Use ActiveModel has_secure_password
