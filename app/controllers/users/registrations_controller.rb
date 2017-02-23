@@ -7,9 +7,9 @@ class Users::RegistrationsController < Devise::RegistrationsController
   #   super
   # end
 
-  # POST /resource
+  # # POST /resource
   # def create
-  #   super
+  #   redirect_to books_path
   # end
 
   # GET /resource/edit

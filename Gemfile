@@ -27,7 +27,7 @@ gem 'bootstrap-sass'
 
 gem 'devise'
 
-gem 'amazon-ecs'
+gem 'rakuten_web_service'
 
 gem 'pry-byebug', group: :development
 

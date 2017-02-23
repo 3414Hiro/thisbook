@@ -1,4 +1,18 @@
 class BooksController < ApplicationController
-  before_action :
+  
+  
+  def index
+    
+  end
+  
+  def create
+  end
+  
+  def destroy
+  end
+  
+  private
+  
+ 
   
 end

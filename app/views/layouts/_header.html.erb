@@ -1,15 +1,19 @@
 <header>
   <div class="container">
     <nav class="navbar navbar-default navbar-fixed-top">
-      <%= link_to "Thisbook", root_path, id: "logo" %>
+      <% unless user_signed_in? %>
+        <%= link_to "Thisbook", root_path, class: "logo" %>
+      <% else %>
+        <%= link_to "Thisbook", books_path, class: "logo" %>
+      <% end %>
       <ul class="nav navbar-nav navbar-right header-right">
-        <% unless user_signed_in? %>
-          <li><%= link_to "ログイン", new_user_session_path %></li>
-          <li><%= link_to "新規登録", new_user_registration_path %></li>
-        <% else %>
+        <% if user_signed_in? %>
           <li><%= link_to "読みたいランキング", "#" %></li>
           <li><%= link_to "My Page", "#" %></li>
           <li><%= link_to "ログアウト", destroy_user_session_path, method: "delete" %></li>
+        <% else %>
+          <li><%= link_to "ログイン", new_user_session_path %></li>
+          <li><%= link_to "新規登録", new_user_registration_path %></li>
         <% end %>
       </ul>
     </nav>
