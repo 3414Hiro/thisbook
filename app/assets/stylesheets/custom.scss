@@ -32,9 +32,10 @@ h3{
 
 // header
 .logo{
-	font-size: 36px;
+	font-size: 30px;
 	color: black;
-	padding-left: 108px;
+	padding-left: 216px;
+	line-height: 1.7em;
 	
 	&:hover{
 		text-decoration: none;
@@ -46,7 +47,7 @@ h3{
 	padding-right: 24px;
 	
 	&:last-child{
-		padding-right: 108px;
+		padding-right: 216px;
 	}
 }
 

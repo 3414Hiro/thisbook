@@ -1,0 +1,29 @@
+<div class="user-show">
+  <div class="row">
+    <div class="col-md-3">
+      <h2 class="username"><%= @user.username %></h2>
+      <div class="userdetail">
+        
+      </div>
+    </div>
+    <div class="col-md-9">
+      <h3 class="serch">本を検索する</h3>
+      <div class="serch">
+       <%= form_tag new_book_path , method: :get do %>
+         <%= text_field_tag :q , params[:q], placeholder: "本のタイトルを入力", required: true %>
+         <%= submit_tag "本を検索", name: nil, class: "btn btn-default", data: { disable_with: "検索中..."} %>
+        <% end %>
+      </div>
+      <div class="serch-result">
+        <% if @books.present? %>
+          <%= render 'books' , books: @books %>
+        <% elsif params[:q].present? %>
+          <div class="alert alert-danger">
+            <span class="glyphicon glyphicon-remove-sign" aria-hidden="true"></span>
+            検索した本はありません
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

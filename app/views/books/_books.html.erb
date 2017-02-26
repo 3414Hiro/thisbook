@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="continer-inner inner-default clearfix">
+    <% books.each do |book| %>
+      <div class="books-box">
+        <div class="books-image">
+          <div class="img-wrap">
+          <% image_url =  book['largeImageUrl'].gsub('?_ex=200x200', '') %>
+          <%= image_tag(image_url, alt: book['title']) %>
+          </div>
+        </div>
+        <div class="detail">
+          <p class="detail-title">
+            <%= link_to book['title'], book['itemUrl'] %>
+          </p>
+        </div>
+        <div class="action cleatfix">
+          <%= link_to "登録" %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

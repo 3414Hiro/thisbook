@@ -1,3 +1,57 @@
 // Place all the styles related to the Books controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.books-box{
+  width: 270px;
+  margin: 15px;
+  float: left;
+  box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+  position: relative;
+  .books-image{
+    width: 270px;
+    height: 270px;
+    display: table;
+    border: 1px solid #ddd;
+    background: #fff;
+    border-top-right-radius: 3px;
+    border-top-left-radius: 3px;
+    .img-wrap{
+      width: 270px;
+      height: 270px;
+      padding: 10px;
+      display: table-cell;
+      vertical-align: middle;
+      text-align: center;
+      img {
+        max-height: 250px;
+      }
+    }
+  }
+  .detail{
+    display: table-cell;
+    height: 55px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-top: 0;
+    background: #fafafa;
+    font-size: 13px;
+    border-bottom-right-radius: 3px;
+    border-bottom-left-radiut: 3px;
+    .detail-title{
+      width: 210;
+      margin: 0;
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 2;
+    }
+  }
+  .selection{
+    width: 60px;
+    height: 55px;
+    display: table-cell;
+    .record{
+      padding-left: 30px;
+    }
+  }
+}

@@ -2,14 +2,14 @@
   <div class="container">
     <nav class="navbar navbar-default navbar-fixed-top">
       <% unless user_signed_in? %>
-        <%= link_to "Thisbook", root_path, class: "logo" %>
+        <%= link_to "人生を変える一冊", root_path, class: "logo" %>
       <% else %>
-        <%= link_to "Thisbook", books_path, class: "logo" %>
+        <%= link_to "人生を変える一冊", books_path, class: "logo" %>
       <% end %>
       <ul class="nav navbar-nav navbar-right header-right">
         <% if user_signed_in? %>
           <li><%= link_to "読みたいランキング", "#" %></li>
-          <li><%= link_to "My Page", "#" %></li>
+          <li><%= link_to "My Page", current_user %></li>
           <li><%= link_to "ログアウト", destroy_user_session_path, method: "delete" %></li>
         <% else %>
           <li><%= link_to "ログイン", new_user_session_path %></li>

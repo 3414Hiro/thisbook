@@ -1,0 +1,24 @@
+<div class="user-show">
+  <div class="row">
+    <div class="col-md-4">
+      <h2 class="username"><%= @user.username %></h2>
+      <div class="userdetail">
+        <div class="userimage"></div>
+        <div class="userwants">
+          <%= link_to "My wants", "#", class: "btn btn-default" %>
+        </div>
+        <div class="userbio">
+          <p>My profile</p>
+          <p><%= @user.bio %></p>
+        </div>
+        <div class="useredit">
+          <%= link_to "プロフィールを編集", edit_user_registration_path(current_user) %>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-8">
+      <h3 class="titleright">私の、一冊</h3>
+      <div><%= link_to "登録する", new_book_path %></div>
+    </div>
+  </div>
+</div>

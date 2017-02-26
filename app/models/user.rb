@@ -7,6 +7,8 @@ class User < ActiveRecord::Base
 
   has_one :recommendation
   has_one :book, through: :recommendation
-    
   
+  mount_uploader :image, ImageUploader
+  
+  validates :bio, length: { maximum: 200 }
 end

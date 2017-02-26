@@ -5,17 +5,17 @@
       <%= devise_error_messages! %>
       
       <div class="form-group">
-        <%= f.label :名前, class: "controll-label" %>
+        <%= f.label :名前, class: "control-label" %>
         <%= f.text_field :username, class: "form-control", autofocus: true %>
       </div>
       
       <div class="form-group">
-        <%= f.label :email, class: "controll-label" %>
+        <%= f.label :email, class: "control-label" %>
         <%= f.email_field :email, class: "form-control", autofocus: true %>
       </div>
       
       <div class="form-group">
-        <%= f.label :パスワード, class: "controll-label" %>
+        <%= f.label :パスワード, class: "control-label" %>
         <% if @minimum_password_length %>
         <em>(<%= @minimum_password_length %> characters minimum)</em>
         <% end %><br />

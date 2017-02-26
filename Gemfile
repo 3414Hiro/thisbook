@@ -29,6 +29,10 @@ gem 'devise'
 
 gem 'rakuten_web_service'
 
+gem 'mini_magick'
+
+gem 'carrierwave'
+
 gem 'pry-byebug', group: :development
 
 # Use ActiveModel has_secure_password

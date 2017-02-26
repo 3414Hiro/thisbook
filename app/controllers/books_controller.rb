@@ -1,11 +1,17 @@
 class BooksController < ApplicationController
-  
+  before_action :set_user
   
   def index
-    
   end
   
-  def create
+  def new
+    if params[:q]
+      response = RakutenWebService::Books::Total.search(
+        keyword: params[:q],
+        imageFlag: 1,
+      )
+      @books = response.first(15)
+    end
   end
   
   def destroy
@@ -13,6 +19,8 @@ class BooksController < ApplicationController
   
   private
   
- 
+  def set_user
+    @user = current_user
+  end
   
 end
