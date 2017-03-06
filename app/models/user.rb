@@ -31,5 +31,9 @@ class User < ActiveRecord::Base
     favorites.destroy if favorite
   end
   
+  # お気に入りしているかどうか
+  def favorite?(book)
+    favorite_books.include?(book)
+  end
   
 end
