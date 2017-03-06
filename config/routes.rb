@@ -13,4 +13,12 @@ Rails.application.routes.draw do
   resources :books, only: [:index, :new]
   
   resources :recommendations
+  
+  resources :favorites, only: [:create, :destroy]
+  
+  resources :users do 
+    member do 
+      get 'favorites'
+    end 
+  end
 end

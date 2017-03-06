@@ -5,9 +5,5 @@ class CreateFavorites < ActiveRecord::Migration
       t.references :book, index: true
 
       t.timestamps null: false
-      
-      t.index :user_id
-      t.index :book_id
     end
-  end
 end

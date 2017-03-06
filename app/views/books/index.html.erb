@@ -1,26 +1,38 @@
 <div class="row">
   <div class="col-md-3" id="leftside">
-    aaa
+    <p>検索できるようにしよう</p>
+    <p>新着順</p>
+    <p>ランダム</p>
+    <p>コメントあるやつだけ</p>
   </div>
   <div class="col-md-9" id="rightside">
     <div class="content">
       <% @books.each do |book| %>
-        <div class="bookuser">
-          <%= @book.users.name %>
-        </div>
-        <div class="imagebox">
-          <div class="image">
-            <div class="img-wrap">
-              <% image_url = @book['largeImageUrl'].gsub('?_ex=200x200', '') %>
+        <div class="eachbox">
+          <div class="bookuser">
+            <% book.users.each do |user| %>
+              <div>
+                <%= link_to user.username, user %>
+              </div>
+            <% end %>
+          </div>
+          
+          <div class="index-box">
+            <div class="index-image">
+              <div class="index-wrap">
+                <% image_url =  book.rakuten_data['largeImageUrl'].gsub('?_ex=200x200', '') %>
+                <%= image_tag(image_url, alt: book.rakuten_data['title']) %>
+              </div>
+            </div>
+            <div class="booktitle">
+              <%= book.title %>
+            </div>
+            <div class="want">
+              <p>a</p>
             </div>
           </div>
-        </div>
-        <div>
-          <p class="title">
-            <%= @book.title %>
-          </p>
         </div>
       <% end %>
     </div>
   </div>
-</div>a
+</div>
