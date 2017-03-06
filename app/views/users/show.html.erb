@@ -1,24 +1,79 @@
 <div class="user-show">
   <div class="row">
-    <div class="col-md-4">
+    <div class="col-md-4 leftside">
       <h2 class="username"><%= @user.username %></h2>
       <div class="userdetail">
-        <div class="userimage"></div>
-        <div class="userwants">
-          <%= link_to "My wants", "#", class: "btn btn-default" %>
+        <div class="userimage">
+          
         </div>
+        
         <div class="userbio">
-          <p>My profile</p>
-          <p><%= @user.bio %></p>
+          <p id="mypro">Profile</p>
+          <div class="biomain">
+            <p><%= simple_format(h @user.bio) %></p>
+          </div>
         </div>
+        
+        <div class="userwants">
+          <%= link_to "My wants", "#" %>
+        </div>
+        
+        <% if @user == current_user %>
         <div class="useredit">
-          <%= link_to "プロフィールを編集", edit_user_registration_path(current_user) %>
+          <%= link_to "プロフィールを編集", edit_user_registration_path(current_user), class: "btn btn-default" %>
         </div>
+        <% end %>
+        
       </div>
     </div>
     <div class="col-md-8">
-      <h3 class="titleright">私の、一冊</h3>
-      <div><%= link_to "登録する", new_book_path %></div>
+      <div class="sub">
+        <h4 class="titleright"><%= @user.username %>の一冊</h4>
+      </div>
+      
+      <% if @user.recommendation.present? %>
+      
+      <div class="main">
+        <div class="main-title">
+          <div class="main-titlebox1">
+            <div class="main-titlebox2">
+              <ul>
+                <li><%= link_to @book_data.title, @book_data['itemUrl'] %></li>
+                <li><%= @book_data.author %></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        
+        <div class="main-image">
+          <div class="r-box">
+            <div class="r-image">
+              <div class="r-wrap">
+                <% image_url =  @book_data['largeImageUrl'].gsub('?_ex=200x200', '') %>
+                <%= image_tag(image_url, alt: @book_data['title']) %>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="main-comment">
+          <div class="main-commentbox">
+            <%= simple_format(h @user.recommendation.comment) %>
+          </div>
+        </div>
+      </div>
+      <% end %>
+      
+      <div class="registar">
+        <% if @user == current_user %>
+          <% unless current_user.book.present? %>
+            <%= link_to "登録する", new_book_path, class: "btn btn-default" %>
+          <% else %>
+            <%= link_to "編集", new_recommendation_path(isbn: @book_data['isbn']) %>
+            <%= link_to "新しい本に変える", new_book_path %>
+          <% end %>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>

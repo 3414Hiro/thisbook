@@ -9,12 +9,12 @@
           </div>
         </div>
         <div class="detail">
-          <p class="detail-title">
+          <p class="detail-title"> 
             <%= link_to book['title'], book['itemUrl'] %>
           </p>
         </div>
-        <div class="action cleatfix">
-          <%= link_to "登録" %>
+        <div class="action cleatfix selection">
+          <%= link_to "選択", new_recommendation_path(isbn: book['isbn']), class: "btn btn-default record" %>
         </div>
       </div>
     <% end %>

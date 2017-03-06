@@ -10,9 +10,7 @@ Rails.application.routes.draw do
   
   resources :users, only: [:index, :show]
   
-  resources :books
+  resources :books, only: [:index, :new]
   
-  resources :users do
-    resources :recommendations
-  end
+  resources :recommendations
 end

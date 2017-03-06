@@ -1,5 +1,26 @@
-<h2>book index</h2>
-<p>aaa</p>
-<p>aaa</p><p>aaa</p><p>aaa</p>
-<p>aaa</p>
-<p>Books#index</p>
+<div class="row">
+  <div class="col-md-3" id="leftside">
+    aaa
+  </div>
+  <div class="col-md-9" id="rightside">
+    <div class="content">
+      <% @books.each do |book| %>
+        <div class="bookuser">
+          <%= @book.users.name %>
+        </div>
+        <div class="imagebox">
+          <div class="image">
+            <div class="img-wrap">
+              <% image_url = @book['largeImageUrl'].gsub('?_ex=200x200', '') %>
+            </div>
+          </div>
+        </div>
+        <div>
+          <p class="title">
+            <%= @book.title %>
+          </p>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>a

@@ -2,18 +2,148 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .user-show{
-  margin: 48px;
+  margin: 0 auto;
   
   .username{
   font-size: 48px;
-  padding-left: 60px;
   text-align: center;
+  padding-bottom: 24px;
   }
   
-  .userdetail
+  .userimage{
+    width: 150px;
+    height: 150px;
+    margin: 0 auto;
+    border: 1px solid gray;
+  }
   
-  .titleright{
-  font-size: 30px;
-  padding-top: 24px;
- }
+  .userbio{
+    padding-top: 24px;
+    width: 250px;
+    height: 230px;
+    margin: 12px auto;
+    #mypro{
+      font-size: 16px;
+      padding-bottom: 2px;
+      border-bottom: 1px solid gray;
+    }
+    .biomain{
+      line-height: 1.8em;
+    }
+  }
+  
+  .userwants{
+    text-align: center;
+    a{
+      &:hover{
+        color: #3fc331;
+      }
+    }
+  }
+  
+  .useredit{
+    text-align: center;
+    margin-top: 20px;
+  }
+ 
+  .sub{
+    width: 100%;
+    height: 34px;
+    margin-top: 36px;
+    .titleright{
+      font-size: 20px;
+      text-align: center;
+      padding-right: 24px;
+    }
+  }
+  
+  .main{
+    margin-top: 8px;
+    .main-title{
+      clear: both;
+      width: 50%;
+      height: 296px;
+      line-height: 2.6em;
+      float: left;
+      font-size: 20px;
+      padding-top: 24px;  
+      text-align: center;
+      .main-titlebox1{
+        display: inline-block;
+        .main-titlebox2{
+          text-align :center;
+          display: table-cell;
+          vertical-align: middle;
+          width: 50%;
+          height: 250px;
+          margin: 20px;
+          a{
+            color: #f5882f;
+            text-decoration: none;
+            &:hover{
+              color: #3fc331;
+            }
+          }
+        }
+      }
+    }
+  
+    .main-image{
+      width: 50%;
+      padding-top: 24px;
+      float: left;
+      margin: 0 auto;
+      .r-box{
+        width: 270px;
+        box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+        .r-image{
+          width: 270px;
+          height: 270px;
+          display: table;
+          border: 1px solid #ddd;
+          background: #fff;
+          border-top-right-radius: 3px;
+          border-top-left-radius: 3px;
+          .r-wrap{
+            width: 270px;
+            height: 270px;
+            padding: 10px;
+            display: table-cell;
+            vertical-align: middle;
+            text-align: center;
+            img{
+              max-height: 250px;
+            }
+          }
+        }
+      }
+    }
+    .main-comment{
+      clear: both;
+      width: 100%;
+      padding-top: 48px;
+      line-height: 2em;
+      font-size: 16px;
+      .main-commentbox{
+        width: 60%;
+        margin: 0 auto;
+      }
+    }
+  }
+  .registar{
+    width: 30%;
+    margin: 0 auto;
+    padding-top: 12px;
+    padding-right: 24px;
+    a{
+      color: #777;
+      text-align: center;
+      margin: 0 auto;
+      margin-bottom: 12px;
+      display: block;
+      &:hover{
+        color: #3fc331;
+      }
+    }
+  }
 }

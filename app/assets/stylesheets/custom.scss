@@ -18,7 +18,7 @@ ul{list-style-type: none;}
 img{max-width: 100%}
 
 h1{
-	font-size: 48px;
+	font-size: 30px;
 	line-height: 1;
 }
 h2{
@@ -30,30 +30,119 @@ h3{
 	line-height: 1;
 }
 
-// header
-.logo{
-	font-size: 30px;
-	color: black;
-	padding-left: 216px;
-	line-height: 1.7em;
-	
-	&:hover{
-		text-decoration: none;
-		color: #3fc331;
-	}
-}
 
-.header-right{
-	padding-right: 24px;
-	
-	&:last-child{
-		padding-right: 216px;
-	}
+
+// header
+#aaa{
+  height: 60px;
+  .nevbar, .bbb{
+    width: 100%;
+    margin: 0;
+    box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+    .container-fluid, .ccc{
+      margin: 0 !important;
+      padding: 0 !important;
+    }
+    .navbar-inner, .ddd{
+      max-width: 996px;
+      margin: 0 auto;
+      .navbar-header{
+        h1{
+          margin: 0 !important;
+          padding: 10px 0 0 0 !important;
+          font-size: 30px;
+          a{
+            color: black;
+            &:hover{
+              color: #3fc331;
+              text-decoration: none;
+            }
+          }
+        }
+      }
+      .element{
+        a{
+          color: #777;
+          &:hover{
+            color: #f5882f;
+          }
+        }
+      }
+    }
+  }
 }
+// .logo{
+// 	font-size: 30px;
+// 	color: black;
+// 	line-height: 1.7em;
+	
+// 	&:hover{
+// 		text-decoration: none;
+// 		color: #3fc331;
+// 	}
+// }
 
 // signup, login
 
 .new{
     padding-top: 108px;
     text-align: center;
+}
+
+//本の画像表示に関して
+.books-box{
+  width: 270px;
+  margin: 15px;
+  float: left;
+  box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+  position: relative;
+  .books-image{
+    width: 270px;
+    height: 270px;
+    display: table;
+    border: 1px solid #ddd;
+    background: #fff;
+    border-top-right-radius: 3px;
+    border-top-left-radius: 3px;
+    .img-wrap{
+      width: 270px;
+      height: 270px;
+      padding: 10px;
+      display: table-cell;
+      vertical-align: middle;
+      text-align: center;
+      img {
+        max-height: 250px;
+      }
+    }
+  }
+  .detail{
+    display: table-cell;
+    height: 55px;
+    width: 200px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-top: 0;
+    background: #fafafa;
+    font-size: 13px;
+    border-bottom-right-radius: 3px;
+    border-bottom-left-radiut: 3px;
+    .detail-title{
+      width: 210;
+      margin: 0;
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 2;
+    }
+  }
+  .selection{
+    width: 59px;
+    height: 55px;
+    display: table-cell;
+    font-size: 16px;
+    position: relative;
+    top: 9px;
+    left: 9px;
+  }
 }
