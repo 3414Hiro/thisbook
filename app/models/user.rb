@@ -8,21 +8,28 @@ class User < ActiveRecord::Base
   has_one :recommendation, dependent: :destroy
   has_one :book, through: :recommendation
   
+  has_many :favorites, dependent: :destroy
+  has_many :favorite_books, through: :favorites, source: :book
+  
   mount_uploader :image, ImageUploader
   
   validates :bio, length: { maximum: 200 }
   
   # userがオススメの一冊を登録する
   def recommend(book, params)
-    # r = if self.recommendation.present?
-    #       self.recommendation
-    #     else
-    #       self.build_recommendation
-    #     end
-    # r.comment = params[:comment]
-    # r.book_id = book.id
-    # r.save
     self.recommendation = self.build_recommendation(book_id: book.id, comment: params[:comment])
   end
+  
+  # userが他の人が紹介している本をお気に入りする
+  def favorite(book)
+    favorites.find_or_create_by(book_id: book.id)
+  end
+  
+  # お気に入りを外す
+  def unfavorite(book)
+    favorite = favorites.find_by(book_id: book.id)
+    favorites.destroy if favorite
+  end
+  
   
 end
