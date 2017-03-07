@@ -23,9 +23,33 @@
       </div>
     </div>
     <div class="col-md-8">
-      <div>
+      <div class="userfavorites">
         <% @books.each do |book| %>
-          <% book.title %>
+          <div class="efb">
+            <div class="favoriteuser">
+              <% book.users.each do |user| %>
+                <div>
+                  <%= link_to user.username, user %>
+                </div>
+              <% end %>
+            </div>
+            
+            <div class="favorite-box">
+              
+              <div class="favorite-image">
+                <div class="favorite-wrap">
+                  <% image_url = book.rakuten_data['largeImageUrl'].gsub('?_ex=200x200', '') %>
+                  <%= image_tag(image_url, alt: book.rakuten_data['title']) %>
+                </div>
+              </div>
+              
+              <div class="favoritetitle">
+                <%= book.title %>
+              </div>
+              
+            </div>
+            
+          </div>
         <% end %>
       </div>
     </div>

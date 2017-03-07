@@ -11,6 +11,9 @@ class UsersController < ApplicationController
   def favorites
     # binding.pry
     @books = @user.favorite_books
+    @books.each do |book|
+      book.rakuten_data = RakutenWebService::Books::Total.search(isbnjan: book.isbn).first
+    end
   end
   
   private

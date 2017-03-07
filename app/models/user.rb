@@ -13,6 +13,8 @@ class User < ActiveRecord::Base
   
   mount_uploader :image, ImageUploader
   
+  
+  
   validates :bio, length: { maximum: 200 }
   
   # userがオススメの一冊を登録する
