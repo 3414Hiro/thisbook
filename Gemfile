@@ -33,6 +33,8 @@ gem 'mini_magick'
 
 gem 'carrierwave'
 
+gem 'cloudinary'
+
 gem 'font-awesome-rails'
 
 gem 'pry-byebug', group: :development
