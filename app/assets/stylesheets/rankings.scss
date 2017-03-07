@@ -1,0 +1,109 @@
+// Place all the styles related to the Rankings controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.ranking{
+  margin-top: 24px;
+  width: 100%;
+  .reb{
+    border: 1px solid #ddd;
+    box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+    border-top-right-radius: 3px;
+    border-top-left-radius: 3px;
+    width: 300px;
+    height: 400px;
+    margin: 6px;
+    float: left;
+    .no-name{
+      width: 300px;
+      height: 40px;
+      .no{
+        border-right: 1px solid #ddd;
+        width: 40px;
+        height: 40px;
+        text-align: center;
+        float: left;
+        padding-top: 9px;
+      }
+      .rankingname{
+        width: 259px;
+        height: 40px;
+        text-align: center;
+        float: left;
+        font-size: 18px;
+        padding-top: 6px;
+        padding-right: 8px;
+        a{
+          color: #121212;
+          &:hover{
+            color: #f5882f;
+            text-decoration: none;
+          }
+        }
+      }
+    }
+    .ranking-box{
+      width: 300px;
+      position: relative;
+      margin: 0 auto;
+      .ranking-image{
+        width: 298px;
+        height: 300px;
+        display: table;
+        border-top: 1px solid #ddd;
+        border-bottom: 1px solid #ddd;
+        background: #fff;
+        .ranking-wrap{
+          width: 298px;
+          height: 300px;
+          padding: 12px;
+          display: table-cell;
+          vertical-align: middle;
+          text-align: center;
+          img{
+            height: 298px;
+          }
+        }
+      }
+      .rankingtitle{
+        display: table-cell;
+        width: 260px;
+        height: 40px;
+        font-size: 16spx;
+        float: left;
+        padding-top: 8px;
+        padding-left: 4px;
+        overflow: hidden;
+      }
+      .rankingwant{
+        width: 38px;
+        height: 40px;
+        text-align: center;
+        float: left;
+        .fff{
+          width: 35px;
+          height: 35px;
+          padding-top: 2px;
+          .favorite_form_hidden{
+            width: 0px;
+            height: 0px;
+            border: 0;
+            margin: 0;
+            padding: 0;
+          }
+          .favorite_form_show{
+            width: 30px;
+            height: 30px;
+            position: relative;
+            border: 1px solid #ddd;
+            border-radius: 2px;
+            background: #fff;
+            i{
+              position: relative;
+              top: 0.4px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

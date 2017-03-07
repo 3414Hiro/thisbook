@@ -21,4 +21,6 @@ Rails.application.routes.draw do
       get 'favorites'
     end 
   end
+  
+  get 'rankings/index'
 end

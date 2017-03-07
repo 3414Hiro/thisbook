@@ -1,0 +1,38 @@
+<div class="row">
+  <div class="col-md-offset-1 col-md-10">
+    <div class="ranking">
+      <% @books.each.with_index(1) do |book, i| %>
+        <div class="reb">
+          <div class="no-name">
+            <div class="no">
+              <%= "No.#{i}" %>
+            </div>
+            <div class="rankingname">
+              <% book.users.each do |user| %>
+                <div>
+                  <%= link_to user.username, user %>
+                </div>
+              <% end %>
+            </div>
+          </div>
+            
+          <div class="ranking-box">
+            <div class="ranking-image">
+              <div class="ranking-wrap">
+                <% image_url =  book.rakuten_data['largeImageUrl'].gsub('?_ex=200x200', '') %>
+                <%= image_tag(image_url, alt: book.rakuten_data['title']) %>
+              </div>
+            </div>
+            <div class="rankingtitle">
+              <%= book.title %>
+            </div>
+            <div class="rankingwant">
+              <%= render 'users/favorite_form', book: book %>
+            </div>
+          </div>
+          
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
