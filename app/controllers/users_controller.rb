@@ -9,6 +9,7 @@ class UsersController < ApplicationController
   end
   
   def favorites
+    # binding.pry
     @books = @user.favorite_books
   end
   

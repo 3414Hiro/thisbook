@@ -70,13 +70,15 @@
       text-align: center;
       .main-titlebox1{
         display: inline-block;
+        width: 90%;
         .main-titlebox2{
           text-align :center;
           display: table-cell;
           vertical-align: middle;
           width: 50%;
           height: 250px;
-          margin: 20px;
+          margin: 50px;
+          padding-left: 25px;
           a{
             color: #f5882f;
             text-decoration: none;

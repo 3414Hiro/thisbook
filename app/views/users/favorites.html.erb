@@ -1,0 +1,33 @@
+<div class="user-show">
+  <div class="row">
+    <div class="col-md-4 leftside">
+      <h2 class="username"><%= @user.username %></h2>
+      <div class="userdetail">
+        <div class="userimage">
+          
+        </div>
+        
+        <div class="userbio">
+          <p id="mypro">Profile</p>
+          <div class="biomain">
+            <p><%= simple_format(h @user.bio) %></p>
+          </div>
+        </div>
+        
+        <% if @user == current_user %>
+        <div class="useredit">
+          <%= link_to "プロフィールを編集", edit_user_registration_path(current_user), class: "btn btn-default" %>
+        </div>
+        <% end %>
+        
+      </div>
+    </div>
+    <div class="col-md-8">
+      <div>
+        <% @books.each do |book| %>
+          <% book.title %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

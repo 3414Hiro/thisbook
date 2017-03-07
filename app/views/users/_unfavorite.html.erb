@@ -1,5 +1,6 @@
 <%= form_for(current_user.favorites.find_by(book_id: book.id),
              html: { method: :delete },
              remote: true) do |f| %>
-  <%= f.submit "U", class: "unfavorite_form btn btn-default" %>
+  <%= f.submit "", class: "favorite_form_hidden" %>
+  <button class="favorite_form_show"><i class="fa fa-heart" aria-hidden="true"></i></button>
 <% end %>

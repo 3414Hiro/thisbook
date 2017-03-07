@@ -12,8 +12,8 @@ Rails.application.routes.draw do
   
   resources :books, only: [:index, :new]
   
-  resources :recommendations
-  
+  resources :recommendations, only: [:new, :create, :edit, :update]
+    
   resources :favorites, only: [:create, :destroy]
   
   resources :users do 

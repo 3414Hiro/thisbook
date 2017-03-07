@@ -23,6 +23,14 @@ class RecommendationsController < ApplicationController
   end
   
   def edit
+    @book_data = RakutenWebService::Books::Total.search(isbnjan: current_user.book.isbn).first
+    @recommendation = current_user.recommendation
+  end
+  
+  def update
+    @book = Book.find_by(isbn: current_user.book.isbn)
+    current_user.recommend(@book, recommendation_params)
+    redirect_to @user
   end
   
   private

@@ -33,6 +33,8 @@ gem 'mini_magick'
 
 gem 'carrierwave'
 
+gem 'font-awesome-rails'
+
 gem 'pry-byebug', group: :development
 
 # Use ActiveModel has_secure_password

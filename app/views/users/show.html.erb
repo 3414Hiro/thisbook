@@ -15,7 +15,9 @@
         </div>
         
         <div class="userwants">
-          <%= link_to "My wants", "#" %>
+          <%= link_to favorites_user_path(@user) do %>
+          <i class="fa fa-2x fa-heart" style="color: #b2b2b2"></i> 
+          <% end %>
         </div>
         
         <% if @user == current_user %>
@@ -69,7 +71,7 @@
           <% unless current_user.book.present? %>
             <%= link_to "登録する", new_book_path, class: "btn btn-default" %>
           <% else %>
-            <%= link_to "編集", new_recommendation_path(isbn: @book_data['isbn']) %>
+            <%= link_to "編集", edit_recommendation_path(current_user) %>
             <%= link_to "新しい本に変える", new_book_path %>
           <% end %>
         <% end %>
