@@ -46,7 +46,9 @@
               <div class="favoritetitle">
                 <%= book.title %>
               </div>
-              
+              <div class="favoritewant">
+                <%= render 'users/favorite_form', book: book %>
+              </div>
             </div>
             
           </div>
