@@ -2,7 +2,6 @@ class BooksController < ApplicationController
   before_action :set_user, only: [:new]
   
   def index
-    # binding.pry
     @books = Book.all
     @books.each do |book|
       book.rakuten_data = RakutenWebService::Books::Total.search(isbnjan: book.isbn).first

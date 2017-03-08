@@ -6,6 +6,8 @@ class UsersController < ApplicationController
     if @user.book.present?
       @book_data = RakutenWebService::Books::Total.search(isbnjan: @user.book.isbn).first
     end
+   
+    # @image = image.resize "150x150"
   end
   
   def favorites

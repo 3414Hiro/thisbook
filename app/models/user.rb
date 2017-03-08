@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+  mount_uploader :avatar, AvatarUploader
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
@@ -29,7 +30,7 @@ class User < ActiveRecord::Base
   
   # お気に入りを外す
   def unfavorite(book)
-    favorite = favorites.find_by(book_id: book.id)
+    favorite = current_user.favorites.find_by(book_id: book.id)
     favorites.destroy if favorite
   end
   
