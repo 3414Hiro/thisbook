@@ -19,7 +19,7 @@
         <div class="collapse navbar-collapse" id="site-menu">
           <ul class="nav navbar-nav navbar-right element">
             <% if user_signed_in? %>
-              <li><%= link_to "読みたいランキング", "#" %></li>
+              <li><%= link_to "読みたいランキング",  %></li>
               <li><%= link_to "My Page", current_user %></li>
               <li><%= link_to "ログアウト", destroy_user_session_path, method: "delete" %></li>
             <% else %>
