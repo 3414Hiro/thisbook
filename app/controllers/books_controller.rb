@@ -1,5 +1,5 @@
 class BooksController < ApplicationController
-  before_action :set_user, only: [:new]
+  before_action :set_user, only: [:new, :edit]
   
   def index
     @books = Book.all
