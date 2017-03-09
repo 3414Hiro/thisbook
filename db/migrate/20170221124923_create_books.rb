@@ -6,7 +6,7 @@ class CreateBooks < ActiveRecord::Migration
       t.string :isbn,  null: false
       t.timestamps null: false
     end
-    add_index :books, :isbn, unique: true
+    add_index :books, :isbn
     
     create_table :recommendations do |t|
       t.references :user, index: true, foreign_key: true

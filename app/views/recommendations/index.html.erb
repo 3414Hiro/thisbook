@@ -1,0 +1,36 @@
+<div class="row">
+  <div class="col-md-3" id="leftside">
+    <p>検索できるようにしよう</p>
+    <p>新着順</p>
+    <p>ランダム</p>
+    <p>コメントあるやつだけ</p>
+  </div>
+  <div class="col-md-9" id="rightside">
+    <div class="content">
+      <% @recommendations.each do |recommendation| %>
+        <div class="eachbox">
+          <div class="bookuser">
+            <div>
+              <%= link_to recommendation.user.username, user_path(recommendation.user) %>
+            </div>
+          </div>
+          
+          <div class="index-box">
+            <div class="index-image">
+              <div class="index-wrap">
+                <% image_url =  recommendation.rakuten_data['largeImageUrl'].gsub('?_ex=200x200', '') %>
+                <%= image_tag(image_url, alt: recommendation.rakuten_data['title']) %>
+              </div>
+            </div>
+            <div class="booktitle">
+              <%= recommendation.book.title %>
+            </div>
+            <div class="want">
+              <%= render 'users/favorite_form', book: recommendation.book %>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

@@ -12,7 +12,7 @@
           <% unless user_signed_in? %>
             <h1><%= link_to "人生を変える一冊", root_path, class: "logo" %></h1>
           <% else %>
-            <h1><%= link_to "人生を変える一冊", books_path, class: "logo" %></h1>
+            <h1><%= link_to "人生を変える一冊", recommendations_path, class: "logo" %></h1>
           <% end %>
         </div>
         

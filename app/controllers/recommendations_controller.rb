@@ -1,7 +1,14 @@
 class RecommendationsController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_user
+  before_action :set_recommendation, only: [:edit, :update]
   
+  def index
+    # binding.pry
+    @recommendations = Recommendation.all
+    @recommendations.each do |recommendation|
+      recommendation.rakuten_data = RakutenWebService::Books::Total.search(isbnjan: recommendation.book.isbn).first
+    end
+  end
   
   def new
     @book_data = RakutenWebService::Books::Total.search(isbnjan: params[:isbn]).first
@@ -19,28 +26,27 @@ class RecommendationsController < ApplicationController
       @book = Book.create(params)
     end
     current_user.recommend(@book, recommendation_params) #params[:comment])
-    redirect_to @user
+    redirect_to current_user
   end
   
   def edit
     @book_data = RakutenWebService::Books::Total.search(isbnjan: current_user.book.isbn).first
-    @recommendation = current_user.recommendation
   end
   
   def update
-    @book = Book.find_by(isbn: current_user.book.isbn)
-    current_user.recommend(@book, recommendation_params)
-    redirect_to @user
+    @recommendation.update(recommendation_params)
+    redirect_to current_user
   end
  
   private
+
   
   def recommendation_params
     # {comment: 'aaaa'}
     params.require(:recommendation).permit(:comment)
   end
   
-  def set_user
-    @user = current_user
+  def set_recommendation
+    @recommendation = Recommendation.find(params[:id])
   end
 end

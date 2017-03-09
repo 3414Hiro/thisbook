@@ -20,7 +20,12 @@ class User < ActiveRecord::Base
   
   # userがオススメの一冊を登録する
   def recommend(book, params)
-    self.recommendation = self.build_recommendation(book_id: book.id, comment: params[:comment])
+    
+    if recommendation.present?
+      recommendation.update(book_id: book.id, comment: params[:comment])
+    else
+      self.recommendation = self.build_recommendation(book_id: book.id, comment: params[:comment])
+    end
   end
   
   # userが他の人が紹介している本をお気に入りする

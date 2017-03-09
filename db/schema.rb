@@ -20,7 +20,7 @@ ActiveRecord::Schema.define(version: 20170308070625) do
     t.datetime "updated_at", null: false
   end
 
-  add_index "books", ["isbn"], name: "index_books_on_isbn", unique: true
+  add_index "books", ["isbn"], name: "index_books_on_isbn"
 
   create_table "favorites", force: :cascade do |t|
     t.integer  "user_id"

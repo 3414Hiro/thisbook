@@ -71,7 +71,7 @@
           <% unless current_user.book.present? %>
             <%= link_to "登録する", new_book_path, class: "btn btn-default" %>
           <% else %>
-            <%= link_to "編集", edit_recommendation_path(current_user) %>
+            <%= link_to "編集", edit_recommendation_path(current_user.recommendation) %>
             <%= link_to "新しい本に変える", new_book_path %>
           <% end %>
         <% end %>

@@ -1,4 +1,5 @@
 class Book < ActiveRecord::Base
+  include SearchBook
   has_many :recommendations, dependent: :destroy
   has_many :users, through: :recommendations
   

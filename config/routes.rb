@@ -10,9 +10,9 @@ Rails.application.routes.draw do
   
   resources :users, only: [:index, :show]
   
-  resources :books, only: [:index, :new, :edit]
+  resources :books, only: [:new]
   
-  resources :recommendations, only: [:new, :create, :edit, :update]
+  resources :recommendations, only: [:index, :new, :create, :edit, :update]
  
   resources :favorites, only: [:create, :destroy]
   
