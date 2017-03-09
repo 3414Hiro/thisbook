@@ -30,8 +30,8 @@ class User < ActiveRecord::Base
   
   # お気に入りを外す
   def unfavorite(book)
-    favorite = current_user.favorites.find_by(book_id: book.id)
-    favorites.destroy if favorite
+    f = favorites.find_by(book_id: book.id)
+    f.destroy if f.present?
   end
   
   # お気に入りしているかどうか

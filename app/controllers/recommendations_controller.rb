@@ -9,7 +9,12 @@ class RecommendationsController < ApplicationController
   end
   
   def create
-    @book = Book.find_by(isbn: params[:isbnjan])
+    binding.pry
+    if current_user.book.present?
+      b = current_user.book
+      b.destroy if b
+    end
+    @book = Book.find_by(isbn: params[:isbn])
     if @book.blank?
       @book_data = RakutenWebService::Books::Total.search(isbnjan: params[:isbnjan]).first
       params = {

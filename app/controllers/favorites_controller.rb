@@ -7,7 +7,6 @@ class FavoritesController < ApplicationController
   end
   
   def destroy
-    # binding.pry
     @book = current_user.favorites.find(params[:id]).book
     current_user.unfavorite(@book)
   end
