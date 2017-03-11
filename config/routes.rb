@@ -13,6 +13,8 @@ Rails.application.routes.draw do
   resources :books, only: [:new]
   
   resources :recommendations, only: [:index, :new, :create, :edit, :update]
+  
+  get 'recommendations/newarrival'
  
   resources :favorites, only: [:create, :destroy]
   

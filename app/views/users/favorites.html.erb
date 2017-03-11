@@ -24,6 +24,9 @@
     </div>
     <div class="col-md-8">
       <div class="userfavorites">
+        <div class="favo">
+          <h4><%= @user.username %>'s <i class="fa fa-heart awesome" ></i> </h4>
+        </div>
         <% @books.each do |book| %>
           <div class="efb">
             <div class="favoriteuser">

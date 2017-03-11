@@ -21,8 +21,19 @@
 // Place all the styles related to the Books controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.leftside{
+  position: fixed;
+  top: 84px;
+  left: 156px;
+  a{
+    display: block;
+    width: 156px;
+    margin-bottom: 24px;
+  }
+}
 .content{
   width: 100%;
+  margin-top: 16px;
   .eachbox{
     border: 1px solid #ddd;
     box-shadow: 0 1px 1px rgba(0,0,0,0.1);
@@ -30,7 +41,7 @@
     border-top-left-radius: 3px;
     width: 260px;
     height: 335px;
-    margin: 6px;
+    margin: 8px;
     float: left;
     .bookuser{
       width: 100%;
