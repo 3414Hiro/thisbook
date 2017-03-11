@@ -35,6 +35,8 @@ gem 'carrierwave'
 
 gem 'cloudinary'
 
+gem 'kaminari'
+
 gem 'font-awesome-rails'
 
 gem 'pry-byebug', group: :development

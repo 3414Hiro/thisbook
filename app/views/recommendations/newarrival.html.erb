@@ -1,6 +1,6 @@
 <div class="row">
   <div class="col-md-3">
-    <div class="leftside">
+    <div class="ls">
       <%= link_to "ランダム表示", recommendations_path, class: "btn btn-default" %>
     </div>
   </div>
@@ -31,5 +31,6 @@
         </div>
       <% end %>
     </div>
+    <%= paginate @recommendations %>
   </div>
 </div>

@@ -3,16 +3,14 @@ class RecommendationsController < ApplicationController
   before_action :set_recommendation, only: [:edit, :update]
   
   def index
-    @recommendations = Recommendation.all
-    @recommendations.shuffle
+    @recommendations = Recommendation.order(:created_at).page params[:page]
     @recommendations.each do |recommendation|
       recommendation.rakuten_data = RakutenWebService::Books::Total.search(isbnjan: recommendation.book.isbn).first
     end
   end
   
   def newarrival
-    @recommendations = Recommendation.all
-    @recommendations.shuffle
+    @recommendations = Recommendation.order(:created_at).page params[:page]
     @recommendations.each do |recommendation|
       recommendation.rakuten_data = RakutenWebService::Books::Total.search(isbnjan: recommendation.book.isbn).first
     end
