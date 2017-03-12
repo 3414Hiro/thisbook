@@ -1,26 +1,37 @@
 // Place all the styles related to the recommendations controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+@media screen and (max-width: 600px){
+  .right{
+    padding-top: 56px;
+    text-align: center;
+    .message{
+      padding-top: 24px;
+      text-align: center;
+      clear: both;
+    }
+    .search{
+      font-size: 20px;
+    }
+    .comment{
+      margin-top: 20px;
+    }
+  }
+}
+
 .right{
   padding-top: 56px;
   text-align: center;
-  
   .message{
     text-align: center;
   }
-
   .search{
     font-size: 20px;
   }
-  
   .comment{
     margin-top: 20px;
   }
 }
-
-// Place all the styles related to the Books controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
 
 
 @media screen and (min-width: 1px){
@@ -150,6 +161,7 @@
   }
 }
 .kaminari{
-  display: block;
-  width: 888px;
+  li{
+    display: block;
+  }
 }
