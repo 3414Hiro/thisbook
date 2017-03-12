@@ -13,6 +13,12 @@ class AvatarUploader < CarrierWave::Uploader::Base
   def store_dir
     "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
   end
+  
+  if Rails.env.production?
+    include Cloudinary::CarrierWave
+  else
+    storage :file
+  end
 
   # Provide a default URL as a default if there hasn't been a file uploaded:
   # def default_url
@@ -45,5 +51,10 @@ class AvatarUploader < CarrierWave::Uploader::Base
   # def filename
   #   "something.jpg" if original_filename
   # end
+  
+  
+  def public_id
+    model.id
+  end
 
 end
