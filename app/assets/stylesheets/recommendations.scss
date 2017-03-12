@@ -21,14 +21,36 @@
 // Place all the styles related to the Books controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-.ls{
-  position: fixed;
-  top: 84px;
-  left: 156px;
-  a{
-    display: block;
-    width: 156px;
-    margin-bottom: 24px;
+
+@media screen and (min-width: 1px){
+  .ls{
+    top: 84px;
+    a{
+      margin: 6px auto;
+      display: block;
+      width: 156px;
+    }
+  }
+  .content{
+    padding-left: 48px;
+  }
+}
+
+
+
+@media screen and (min-width: 1080px){
+  .ls{
+    position: fixed;
+    top: 84px;
+    left: 156px;
+    a{
+      display: block;
+      width: 156px;
+      margin-bottom: 24px;
+    }
+  }
+  .content{
+    padding-left: 0px;
   }
 }
 .content{
@@ -125,4 +147,8 @@
       }
     }
   }
+}
+.kaminari{
+  display: block;
+  width: 888px;
 }

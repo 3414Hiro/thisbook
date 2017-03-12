@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   
   resources :recommendations, only: [:index, :new, :create, :edit, :update]
   
-  get 'recommendations/newarrival'
+  get 'recommendations/random'
  
   resources :favorites, only: [:create, :destroy]
   

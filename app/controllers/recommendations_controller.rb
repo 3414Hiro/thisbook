@@ -9,11 +9,12 @@ class RecommendationsController < ApplicationController
     end
   end
   
-  def newarrival
-    @recommendations = Recommendation.order(:created_at).page params[:page]
+  def random
+    @recommendations = Recommendation.all.shuffle
     @recommendations.each do |recommendation|
       recommendation.rakuten_data = RakutenWebService::Books::Total.search(isbnjan: recommendation.book.isbn).first
     end
+    
   end
   
   def new
